@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #eef2f3;
+}
+
+h1 {
+    color: #0a5c0a;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.box {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-left: 6px solid #0a7a0a;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h3 {
+    color: #0a7a0a;
+}
+
+#addRowBtn {
+    background: #0077cc;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#addRowBtn:hover {
+    background: #005fa3;
+}
+
+#copyBtn {
+    background: green;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#copyBtn:hover {
+    background: #0a7a0a;
+}
+
+#copyStatus {
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+}
