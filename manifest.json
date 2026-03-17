@@ -1,7 +1,7 @@
 {
   "name": "Calcolo KG",
   "short_name": "KG",
-  "start_url": "./",
+  "start_url": "https://loytheloy-boop.github.io/Calcolo-Kg/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ff0000",
