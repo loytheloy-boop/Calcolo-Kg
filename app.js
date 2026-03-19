@@ -87,3 +87,40 @@ function updateL2(i, v) { righe[i].L2 = parseFloat(v); render(); }
 function updatePezzi(i, v) { righe[i].pezzi = parseInt(v); render(); }
 
 updateGrammature();
+function copiaRiepilogo() {
+    const tipo = document.getElementById("tipo").value;
+    const grammatura = document.getElementById("grammatura").value;
+
+    let testo = `Tipo: ${tipo}\nGrammatura: ${grammatura}\n\n`;
+
+    righe.forEach((r, i) => {
+        const coef = grammatura / 10000;
+        const grpz = r.L1 * r.L2 * coef;
+        const pzcf = 5000 / grpz;
+        const cf = r.pezzi > 0 ? Math.ceil(r.pezzi / pzcf) : 0;
+        const kg = (grpz * r.pezzi) / 1000;
+
+        testo += `Riga ${i + 1}:\n`;
+        testo += `  L1: ${r.L1}\n`;
+        testo += `  L2: ${r.L2}\n`;
+        testo += `  Pezzi: ${r.pezzi}\n`;
+        testo += `  gr/pz: ${grpz.toFixed(2)}\n`;
+        testo += `  pz/CF: ${pzcf.toFixed(2)}\n`;
+        testo += `  CF necessari: ${cf}\n`;
+        testo += `  Kg: ${kg.toFixed(2)}\n\n`;
+    });
+
+    navigator.clipboard.writeText(testo)
+        .then(() => {
+            document.getElementById("copyStatus").textContent = "Riepilogo copiato!";
+        })
+        .catch(() => {
+            const area = document.createElement("textarea");
+            area.value = testo;
+            document.body.appendChild(area);
+            area.select();
+            document.execCommand("copy");
+            document.body.removeChild(area);
+            document.getElementById("copyStatus").textContent = "Riepilogo copiato (fallback)";
+        });
+}
